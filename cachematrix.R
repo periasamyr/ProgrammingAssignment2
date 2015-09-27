@@ -10,11 +10,7 @@
 ## 3. set the inverse of the matrix using solve() function
 ## 4. get the inverse of the matrix
 
-
-
-## Second function computes the inverse of the matrix using the vector
-## of functions created using first function. It first checks if inverse has already 
-## been computed and if so, it get the inverse from cache using 'getinversemakeCacheMatrix <- function(x = matrix()) {
+makeCacheMatrix <- function(x = matrix()) {
     m <- NULL                                   ## Initiatlize inverse matrix variable
     set <- function (y = matrix()) {
         x <<- y                                 ## Function to caches value of matrix in global environment
@@ -27,9 +23,12 @@
          setinverse = setinverse,
          getinverse = getinverse)               ## Build a vector of required functions
 }
-' function.
-## If inverse has not been computed earlier, it computes it using 'solve' function and 
-## caches the result using 'setinverse' function
+
+## Second function computes the inverse of the matrix using the vector
+## of functions created using the above first function. It first checks if inverse has already 
+## been computed and if so, it get the inverse from cache using 'getinverse' function
+## If inverse has not been computed earlier, it computes it using 'solve'function and 
+## caches the result using 'setinverse'function
 
 cacheSolve <- function(x, ...) {
         ## Return a matrix that is the inverse of 'x'
