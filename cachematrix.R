@@ -16,7 +16,7 @@ makeCacheMatrix <- function(x = matrix()) {
         x <<- y                                 ## Function to caches value of matrix in global environment
         m <<- NULL                              ## Reset inverse matrix variable
     }
-    get <- function() x                         ## Function to gets the matrix
+    get <- function() x                         ## Function to get the matrix
     setinverse <- function(solve) m <<- solve   ## Function to cache the inverse of matrix
     getinverse <- function() m                  ## Function to get computed inverse matrix
     list(set = set, get = get, 
